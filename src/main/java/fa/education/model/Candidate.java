@@ -1,6 +1,7 @@
 package fa.education.model;
 
 import jakarta.persistence.*;
+import org.hibernate.validator.constraints.Range;
 
 import java.util.Date;
 import java.util.List;
@@ -16,18 +17,20 @@ public class Candidate {
     @Column(name = "date_of_birth", nullable = false)
     private Date dateOfBirth;
     @Column(name = "gender", nullable = false)
+    @Range(min = 0, max = 1)
     private int gender;
     @Column(name = "graduation_year", nullable = false)
     private Date graduationYear;
-    @Column(name = "phone", nullable = false)
+    @Column(name = "phone", nullable = false, unique = true)
     private String phone;
-    @Column(name = "email", nullable = false)
+    @Column(name = "email", nullable = false, unique = true)
     private String email;
     @Column(name = "skill", nullable = false)
     private String skill;
     @Column(name = "foreign_language", nullable = false)
     private String foreignLanguage;
     @Column(name = "level", nullable = false)
+    @Range(min = 1, max = 7)
     private int level;
     @Column(name = "cv", nullable = false)
     private String cv;
@@ -142,5 +145,21 @@ public class Candidate {
 
     public void setRemark(String remark) {
         this.remark = remark;
+    }
+
+    public List<Interview> getInterviews() {
+        return interviews;
+    }
+
+    public void setInterviews(List<Interview> interviews) {
+        this.interviews = interviews;
+    }
+
+    public List<EntryTest> getEntryTests() {
+        return entryTests;
+    }
+
+    public void setEntryTests(List<EntryTest> entryTests) {
+        this.entryTests = entryTests;
     }
 }

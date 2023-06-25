@@ -1,6 +1,7 @@
 package fa.education.model;
 
 import jakarta.persistence.*;
+import org.hibernate.validator.constraints.Range;
 
 import java.util.Date;
 
@@ -18,10 +19,12 @@ public class EntryTest {
     @Column(name = "language_valuator", nullable = false)
     private String languageValuator;
     @Column(name = "language_result", nullable = false)
+    @Range(min = 0, max = 10)
     private double languageResult;
     @Column(name = "technical_valuator", nullable = false)
     private String technicalValuator;
     @Column(name = "technical_result", nullable = false)
+    @Range(min = 0, max = 10)
     private double technicalResult;
     @Column(name = "result", nullable = false)
     private String result;
