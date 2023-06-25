@@ -11,7 +11,7 @@
             jdbc:sqlserver://localhost:1433;databaseName=ORM.M.A301db;encrypt=true;trustServerCertificate=true;;
         </property>
         <property name="hibernate.connection.username">
-            sa
+            halh
         </property>
         <property name="hibernate.connection.password">
             1
@@ -34,5 +34,7 @@
         <property name="hibernate.dbcp.maxWaitMillis">-1</property>
         <!-- List mapping annotation classes -->
         <mapping class="fa.education.model.Candidate"/>
+        <mapping class="fa.education.model.Interview"/>
+        <mapping class="fa.education.model.EntryTest"/>
     </session-factory>
 </hibernate-configuration>

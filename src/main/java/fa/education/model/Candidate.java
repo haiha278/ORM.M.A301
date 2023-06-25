@@ -1,11 +1,9 @@
 package fa.education.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "Candidate")
@@ -37,6 +35,10 @@ public class Candidate {
     private int allocationStatus;
     @Column(name = "remark", nullable = false)
     private String remark;
+    @OneToMany(mappedBy = "candidate")
+    private List<Interview> interviews;
+    @OneToMany(mappedBy = "candidate")
+    private List<EntryTest> entryTests;
 
     public int getCandidateID() {
         return candidateID;
