@@ -1,8 +1,9 @@
-package fa.education.model;
+package fa.education.entities;
 
 import jakarta.persistence.*;
 import org.hibernate.validator.constraints.Range;
 
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 
 @Entity
@@ -27,6 +28,7 @@ public class EntryTest {
     @Range(min = 0, max = 10)
     private double technicalResult;
     @Column(name = "result", nullable = false)
+    @Pattern(regexp = "pass|fail")
     private String result;
     @Column(name = "remark", nullable = false)
     private String remark;

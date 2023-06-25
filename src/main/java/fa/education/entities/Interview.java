@@ -1,9 +1,8 @@
-package fa.education.model;
+package fa.education.entities;
 
 import jakarta.persistence.*;
 
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name = "Interview")
