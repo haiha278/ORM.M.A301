@@ -1,6 +1,6 @@
 package fa.education.entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 
 import java.util.Date;
 

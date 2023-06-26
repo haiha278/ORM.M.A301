@@ -1,6 +1,6 @@
 package fa.education.entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import org.hibernate.validator.constraints.Range;
 
 import javax.validation.constraints.Pattern;

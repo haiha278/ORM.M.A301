@@ -1,6 +1,6 @@
 package fa.education.entities;
 
-import jakarta.persistence.*;
+import javax.persistence.*;
 import org.hibernate.validator.constraints.Range;
 
 import java.util.Date;
@@ -161,5 +161,8 @@ public class Candidate {
 
     public void setEntryTests(List<EntryTest> entryTests) {
         this.entryTests = entryTests;
+    }
+
+    public Candidate() {
     }
 }
