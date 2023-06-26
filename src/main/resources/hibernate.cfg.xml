@@ -11,7 +11,7 @@
             jdbc:sqlserver://localhost:1433;databaseName=ORM.M.A301db;encrypt=true;trustServerCertificate=true;;
         </property>
         <property name="hibernate.connection.username">
-            halh
+            sa
         </property>
         <property name="hibernate.connection.password">
             1

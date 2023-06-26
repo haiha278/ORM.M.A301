@@ -17,12 +17,11 @@ public class main {
         org.hibernate.SessionFactory sessionFactory1 = sessionFactory.sessionFactory();
         Session session = sessionFactory1.openSession();
         session.beginTransaction();
-        List<CandidateDTO> candidateListBySkillAndLevel = candidateDao.getCandidateBySkillAndSkillLevel("Angluar", 2, session);
+//        List<CandidateDTO> candidateListBySkillAndLevel = candidateDao.getCandidateBySkillAndSkillLevel("Angluar", 2, session);
 //        List<CandidateDTO> candidateListBySkillAndLanguage = candidateDao.getCandidateByLanguageAndSkill("Japanese", "Python/ML", session);
 //        List<CandidateDTO> candidateListBySkillAndEntryTest = candidateDao.getCandidateBySkillAndTestResult("Java", "2020-10-1", "Pass", session);
 //        List<CandidateDTO> candidateListByInterviewResult = candidateDao.getCandidateByInterviewResult("2020-10-15", "Pass", session);
-
-
+        Boolean check = candidateDao.updateCandidateRemark("inactive",session);
         session.getTransaction().commit();
         session.close();
     }

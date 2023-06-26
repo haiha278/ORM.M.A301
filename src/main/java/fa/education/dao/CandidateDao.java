@@ -89,4 +89,17 @@ public class CandidateDao implements DAO<Candidate> {
         }
         return null;
     }
+
+    public boolean updateCandidateRemark(String remark, Session session) {
+        String hql = "UPDATE fa.education.entities.Candidate SET remark =:remark WHERE phone IS NULL and email IS NULL and cv IS NULL";
+        Query query = session.createQuery(hql);
+        query.setParameter("remark", "inactive");
+        int row_effected = query.executeUpdate();
+        if (row_effected > 0) {
+            System.out.println("Update Success");
+        } else if (row_effected < 0) {
+            System.out.println("Update Fail");
+        }
+        return true;
+    }
 }
